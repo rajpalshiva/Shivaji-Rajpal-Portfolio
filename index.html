@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivaji Rajpal | SEO & Digital Marketing Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #D42B2B;
+  --red-dark: #A01E1E;
+  --red-bright: #FF3333;
+  --black: #0A0A0A;
+  --dark: #141414;
+  --dark2: #1E1E1E;
+  --dark3: #2A2A2A;
+  --white: #FFFFFF;
+  --white-soft: #F5F5F5;
+  --gray: #888888;
+  --gray-light: #C0C0C0;
+  --border: rgba(255,255,255,0.08);
+  --border-red: rgba(212,43,43,0.4);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+/* ======= NAV ======= */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+}
+.nav-logo span { color: var(--red); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--red);
+  transition: width 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--red);
+  color: var(--white) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--red-dark) !important; }
+
+/* ======= HERO ======= */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex; align-items: center;
+  padding: 80px 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(8rem, 20vw, 18rem);
+  color: rgba(255,255,255,0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.1em;
+  z-index: 0;
+}
+
+/* FIX #1: hero-line repositioned so it does NOT cross the name */
+.hero-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 58%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--red) 30%, var(--red) 70%, transparent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-left { padding-right: 4rem; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow-line { width: 40px; height: 2px; background: var(--red); }
+.eyebrow-text {
+  font-size: 0.75rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--red);
+  font-weight: 600;
+}
+.hero h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.hero h1 .red { color: var(--red); }
+.hero-role {
+  font-size: 1rem;
+  color: var(--gray-light);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+.hero-bio {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 460px;
+}
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--red);
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+  border: 2px solid var(--red);
+}
+.btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.hero-stat {
+  padding-right: 2rem;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
+.hero-stat:nth-child(2) { padding: 0 2rem; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gray);
+}
+
+/* Photo side */
+.hero-right { position: relative; display: flex; align-items: center; justify-content: center; }
+.photo-container {
+  position: relative;
+  width: 380px; height: 480px;
+}
+.photo-bg-rect {
+  position: absolute;
+  top: 24px; right: -24px;
+  width: 100%; height: 100%;
+  background: var(--dark3);
+  border: 1px solid var(--border-red);
+}
+.photo-img {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+.photo-badge {
+  position: absolute;
+  bottom: -16px; left: -24px;
+  background: var(--red);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  z-index: 2;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+.photo-available {
+  position: absolute;
+  top: -16px; right: -24px;
+  background: var(--dark2);
+  border: 1px solid var(--border-red);
+  color: var(--gray-light);
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.available-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: #2ECC71;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+/* ======= SECTIONS ======= */
+section { padding: 6rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-header { margin-bottom: 4rem; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.label-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem; color: var(--red); letter-spacing: 0.15em;
+}
+.label-line { width: 40px; height: 1px; background: var(--red); }
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.section-sub { color: var(--gray); max-width: 580px; font-size: 0.95rem; }
+
+/* ======= SKILLS ======= */
+.skills-section { background: var(--dark); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.skill-card {
+  background: var(--dark);
+  padding: 2rem;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.skill-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--red);
+  transition: height 0.3s;
+}
+.skill-card:hover { background: var(--dark2); }
+.skill-card:hover::before { height: 100%; }
+.skill-icon { font-size: 2rem; margin-bottom: 1rem; }
+.skill-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.skill-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+.skills-tools {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 3rem;
+}
+.tool-tag {
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: var(--gray-light);
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tool-tag:hover { border-color: var(--red); color: var(--white); }
+
+/* ======= EXPERIENCE ======= */
+.exp-section { background: var(--black); }
+.exp-timeline { position: relative; padding-left: 1px; }
+.exp-timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--red), rgba(212,43,43,0.1));
+}
+
+/* FIX #2 & #3: exp-item now uses flex instead of grid for reliable alignment */
+.exp-item {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  padding-left: 2rem;
+}
+.exp-item:last-child { border-bottom: none; margin-bottom: 0; }
+.exp-dot {
+  position: absolute; left: -7px; top: 6px;
+  width: 15px; height: 15px;
+  background: var(--red);
+  border: 3px solid var(--black);
+  z-index: 1;
+  flex-shrink: 0;
+}
+.exp-years {
+  flex-shrink: 0;
+  width: 160px;
+  min-width: 160px;
+}
+.exp-period {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  font-weight: 600;
+  padding-top: 0.2rem;
+  white-space: nowrap;
+}
+.exp-duration {
+  font-size: 0.72rem;
+  color: var(--gray);
+  margin-top: 0.3rem;
+}
+.exp-content { flex: 1; min-width: 0; }
+.exp-role {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+.exp-company {
+  font-size: 0.85rem; color: var(--red);
+  font-weight: 600; margin-bottom: 1.25rem;
+  letter-spacing: 0.05em;
+}
+.exp-points { list-style: none; }
+.exp-points li {
+  font-size: 0.88rem; color: rgba(255,255,255,0.6);
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  position: relative;
+}
+.exp-points li::before {
+  content: '';
+  position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 8px; height: 2px;
+  background: var(--red);
+}
+
+/* ======= CASE STUDIES ======= */
+.cases-section { background: var(--dark); }
+.cases-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem; margin-top: 0;
+}
+.case-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+}
+.case-card:hover {
+  border-color: var(--red);
+  transform: translateY(-4px);
+}
+.case-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.case-card:hover::before { transform: scaleX(1); }
+.case-head {
+  background: var(--dark3);
+  padding: 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.case-logo {
+  width: 44px; height: 44px;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; color: var(--white);
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+.case-client-name {
+  font-weight: 600; font-size: 0.95rem; color: var(--white);
+}
+.case-industry {
+  font-size: 0.72rem; color: var(--gray);
+  text-transform: uppercase; letter-spacing: 0.1em;
+  margin-top: 0.2rem;
+}
+.case-badge {
+  margin-left: auto;
+  font-size: 0.65rem; padding: 0.25rem 0.75rem;
+  border: 1px solid;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.badge-ca { color: #e6b033; border-color: #e6b033; }
+.badge-us { color: #60a5fa; border-color: #60a5fa; }
+.badge-au { color: #34d399; border-color: #34d399; }
+.badge-ae { color: #f97316; border-color: #f97316; }
+.case-body { padding: 1.5rem; }
+.case-challenge-label {
+  font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.15em; color: var(--red);
+  margin-bottom: 0.5rem; font-weight: 600;
+}
+.case-problem {
+  font-size: 0.88rem; color: rgba(255,255,255,0.7);
+  font-style: italic; margin-bottom: 1.5rem;
+  line-height: 1.6;
+  border-left: 2px solid var(--red);
+  padding-left: 1rem;
+}
+.case-results {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+}
+.result-item {
+  background: var(--dark);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+.result-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem; color: var(--red);
+  line-height: 1;
+}
+.result-label {
+  font-size: 0.65rem; color: var(--gray);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+.case-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
+.case-tag {
+  font-size: 0.65rem; padding: 0.2rem 0.6rem;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  color: var(--gray);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.case-summary {
+  font-size: 0.83rem; color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.case-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--red);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: gap 0.2s;
+}
+.case-link:hover { gap: 0.75rem; }
+
+/* ======= WORK SAMPLES ======= */
+.work-section { background: var(--black); }
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.work-card {
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.work-card:hover { border-color: var(--red); transform: translateY(-3px); }
+.work-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem; color: rgba(212,43,43,0.15);
+  line-height: 1;
+  margin-bottom: 0;
+  position: absolute; top: 1rem; right: 1.5rem;
+}
+.work-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem; color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.work-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.6; margin-bottom: 1.5rem; }
+.work-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--dark3);
+  border: 1px solid var(--border-red);
+  color: var(--red);
+  padding: 0.6rem 1.25rem;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s;
+}
+.work-link:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+
+/* ======= CONTACT ======= */
+.contact-section { background: var(--dark); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; margin-top: 0;
+}
+.contact-intro {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem; line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.contact-item {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.contact-icon {
+  width: 44px; height: 44px;
+  background: rgba(212,43,43,0.1);
+  border: 1px solid var(--border-red);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+.contact-detail span {
+  display: block; font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--red); margin-bottom: 0.2rem; font-weight: 600;
+}
+.contact-detail a, .contact-detail p {
+  font-size: 0.9rem; color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-detail a:hover { color: var(--red); }
+.form-wrapper { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label {
+  font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.15em; color: var(--gray); font-weight: 600;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  padding: 0.8rem 1rem;
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--red); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-group select option { background: var(--dark2); }
+
+/* FIX #4: Submit button sends via WhatsApp */
+.submit-btn {
+  background: var(--red);
+  color: var(--white);
+  border: none; padding: 1rem 2rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+.submit-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+/* ======= FOOTER ======= */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+footer span { color: var(--red); }
+
+/* ======= DIVIDER ======= */
+.red-divider {
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), transparent);
+  max-width: 80px;
+  margin: 1rem 0 2rem;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-left { padding-right: 0; text-align: center; }
+  .hero-eyebrow { justify-content: center; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { grid-template-columns: repeat(3,1fr); }
+  .hero-right { display: none; }
+  .exp-item { flex-direction: column; gap: 0.5rem; }
+  .exp-years { width: auto; }
+  .exp-dot { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .work-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
+  .hero-stat { border-right: none !important; padding: 0 !important; }
+  .cases-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Shivaji<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Case Studies</a></li>
+    <li><a href="#samples">Work Samples</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO / ABOUT -->
+<section class="hero" id="about">
+  <div class="hero-bg-text">SEO</div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Open to Full-Time Roles &nbsp;|&nbsp; Jaipur, India</span>
+      </div>
+      <h1>Shivaji<br><span class="red">Rajpal</span></h1>
+      <p class="hero-role">SEO Executive &amp; Digital Marketing Specialist &nbsp;·&nbsp; 5+ Years</p>
+      <p class="hero-bio">
+        Results-driven SEO and digital marketing professional with 5+ years of hands-on experience managing 140+ projects across US, UK, Canadian, and Australian markets. I specialise in driving measurable organic growth through technical SEO, content strategy, link building, and local SEO — turning underperforming websites into revenue-generating assets.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">→ Get In Touch</a>
+        <a href="#work" class="btn-outline">View Case Studies</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num">140+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="photo-container">
+        <div class="photo-bg-rect"></div>
+        <img class="photo-img" src="shivaji_photo.jpg" alt="Shivaji Rajpal — SEO Specialist" />
+        <div class="photo-badge">SEO Executive</div>
+        <div class="photo-available">
+          <span class="available-dot"></span>Available for Hire
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-num">01 /</span>
+        <div class="label-line"></div>
+      </div>
+      <h2 class="section-title">Core Skills</h2>
+      <div class="red-divider"></div>
+      <p class="section-sub">Full-spectrum digital marketing capabilities built across diverse industries and international markets.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name">AEO & GEO Optimisation</div>
+        <div class="skill-desc">Answer Engine Optimisation and Generative Engine Optimisation — structuring content for AI-generated answers, featured snippets, and visibility in tools like ChatGPT, Perplexity, and Google AI Overviews.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔍</div>
+        <div class="skill-name">Technical SEO</div>
+        <div class="skill-desc">Site audits, crawl error resolution, Core Web Vitals optimisation, schema markup, XML sitemaps, and indexing strategies.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Keyword Research</div>
+        <div class="skill-desc">Intent-based keyword clustering, competitor gap analysis, long-tail strategy, and topical authority building.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">✍️</div>
+        <div class="skill-name">On-Page SEO</div>
+        <div class="skill-desc">Content optimisation, meta strategy, heading hierarchy, internal linking architecture, and NLP-driven content briefs.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔗</div>
+        <div class="skill-name">Link Building</div>
+        <div class="skill-desc">Guest posting, niche edits, digital PR, and high-authority backlink acquisition across relevant verticals.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📍</div>
+        <div class="skill-name">Local SEO</div>
+        <div class="skill-desc">Google Business Profile optimisation, local citation building, review management, and map pack ranking strategies.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📱</div>
+        <div class="skill-name">Social Media</div>
+        <div class="skill-desc">Content creation and community management across Instagram, Facebook, and X (Twitter) for brand awareness and traffic.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">✏️</div>
+        <div class="skill-name">Blog & Content Writing</div>
+        <div class="skill-desc">Writing and publishing SEO-optimised blog posts and web page content — including keyword integration, formatting, and publishing directly on WordPress and CMS platforms.</div>
+      </div>
+    </div>
+    <div class="skills-tools" style="margin-top:2.5rem;">
+      <div class="tool-tag">Ahrefs</div>
+      <div class="tool-tag">SEMrush</div>
+      <div class="tool-tag">Google Search Console</div>
+      <div class="tool-tag">Google Analytics 4</div>
+      <div class="tool-tag">Screaming Frog</div>
+      <div class="tool-tag">Moz</div>
+      <div class="tool-tag">Surfer SEO</div>
+      <div class="tool-tag">Majestic</div>
+      <div class="tool-tag">Google Ads</div>
+      <div class="tool-tag">Canva</div>
+      <div class="tool-tag">WordPress</div>
+      <div class="tool-tag">Shopify</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-section" id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-num">02 /</span>
+        <div class="label-line"></div>
+      </div>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="red-divider"></div>
+    </div>
+    <div class="exp-timeline">
+
+      <!-- FIX #2: SEO Executive — flex layout, properly aligned -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-years">
+          <div class="exp-period">Feb 2023 – Mar 2026</div>
+          <div class="exp-duration">3 Years</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">SEO Executive</div>
+          <div class="exp-company">DPI Infotech &nbsp;·&nbsp; Delhi, India</div>
+          <ul class="exp-points">
+            <li>Led SEO strategy and execution for 140+ client projects across US, UK, Canadian, and UAE markets</li>
+            <li>Managed end-to-end SEO campaigns for insurance, legal, e-commerce, real estate, and hospitality clients</li>
+            <li>Conducted comprehensive technical audits resolving crawl errors, page speed issues, and Core Web Vitals</li>
+            <li>Executed local SEO and Google Business Profile optimisation achieving measurable map pack improvements</li>
+            <li>Built and managed social media presence on Instagram, Facebook, and X for multiple client brands</li>
+            <li>Delivered detailed monthly performance reports tracking rankings, traffic, and conversion KPIs</li>
+            <li>Performed competitor analysis and keyword research using Ahrefs, SEMrush, and Google Search Console</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FIX #3: Digital Marketing Executive — flex layout, properly aligned -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-years">
+          <div class="exp-period">Feb 2021 – Jan 2023</div>
+          <div class="exp-duration">2 Years</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Digital Marketing Executive</div>
+          <div class="exp-company">DPI Infotech &nbsp;·&nbsp; Delhi, India</div>
+          <ul class="exp-points">
+            <li>Managed digital marketing campaigns spanning search, social, and content channels</li>
+            <li>Executed on-page SEO, meta optimisation, and content calendar planning for diverse clients</li>
+            <li>Built foundational link profiles through directory submissions, outreach, and content syndication</li>
+            <li>Coordinated with design team for social media creatives across Instagram and Facebook</li>
+            <li>Assisted in website audits, keyword mapping, and client onboarding documentation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases-section" id="work">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-num">03 /</span>
+        <div class="label-line"></div>
+      </div>
+      <h2 class="section-title">Case Studies</h2>
+      <div class="red-divider"></div>
+      <p class="section-sub">Real client projects showcasing measurable SEO results across industries and geographies.</p>
+    </div>
+    <div class="cases-grid">
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-logo">OP</div>
+          <div>
+            <div class="case-client-name">Olio Piro</div>
+            <div class="case-industry">Premium Olive Oil &nbsp;·&nbsp; Canada</div>
+          </div>
+          <span class="case-badge badge-ca">CA Market</span>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge-label">The Challenge</div>
+          <p class="case-problem">"A premium artisan olive oil brand with zero organic presence, competing against established grocery giants and international importers."</p>
+          <div class="case-results">
+            <div class="result-item"><div class="result-num">+63%</div><div class="result-label">Organic Traffic</div></div>
+            <div class="result-item"><div class="result-num">+44</div><div class="result-label">Keywords Pg 1</div></div>
+            <div class="result-item"><div class="result-num">+38%</div><div class="result-label">Organic Revenue</div></div>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">E-commerce SEO</span>
+            <span class="case-tag">Product Optimisation</span>
+            <span class="case-tag">Content Strategy</span>
+            <span class="case-tag">Link Building</span>
+            <span class="case-tag">Schema Markup</span>
+          </div>
+          <div class="case-summary">Rebuilt the product page architecture with intent-matched keywords and structured data for food/grocery schema. Created a blog strategy around olive oil education, pairing guides, and recipe content to capture informational traffic. Secured backlinks from Canadian food blogs and culinary publications.</div>
+          <a href="https://olio-piro.com/" target="_blank" class="case-link">View Website →</a>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-logo">CT</div>
+          <div>
+            <div class="case-client-name">Cartolano</div>
+            <div class="case-industry">Real Estate Investments &nbsp;·&nbsp; Canada</div>
+          </div>
+          <span class="case-badge badge-ca">CA Market</span>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge-label">The Challenge</div>
+          <p class="case-problem">"A Canadian real estate investment firm with minimal digital footprint, struggling to rank for competitive investment and property-related terms."</p>
+          <div class="case-results">
+            <div class="result-item"><div class="result-num">+79%</div><div class="result-label">Organic Traffic</div></div>
+            <div class="result-item"><div class="result-num">Top 5</div><div class="result-label">Target Keywords</div></div>
+            <div class="result-item"><div class="result-num">+51%</div><div class="result-label">Lead Enquiries</div></div>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">B2B SEO</span>
+            <span class="case-tag">Technical SEO</span>
+            <span class="case-tag">E-E-A-T</span>
+            <span class="case-tag">Content Marketing</span>
+            <span class="case-tag">Local SEO</span>
+          </div>
+          <div class="case-summary">Conducted a full technical audit fixing crawlability issues and implementing proper canonical tags. Developed authoritative long-form content around Canadian real estate investment trends to build topical authority. Applied E-E-A-T principles across key pages.</div>
+          <a href="https://cartolano.ca/" target="_blank" class="case-link">View Website →</a>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-head">
+          <div class="case-logo">RI</div>
+          <div>
+            <div class="case-client-name">Ritz Interiors</div>
+            <div class="case-industry">Luxury Interior Design &nbsp;·&nbsp; Dubai, UAE</div>
+          </div>
+          <span class="case-badge badge-ae">UAE Market</span>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge-label">The Challenge</div>
+          <p class="case-problem">"A luxury interior design studio competing against established firms, with an outdated website structure and almost no organic lead generation."</p>
+          <div class="case-results">
+            <div class="result-item"><div class="result-num">+87%</div><div class="result-label">Organic Traffic</div></div>
+            <div class="result-item"><div class="result-num">+56</div><div class="result-label">Keywords Pg 1</div></div>
+            <div class="result-item"><div class="result-num">+69%</div><div class="result-label">Contact Enquiries</div></div>
+          </div>
+          <div class="case-tags">
+            <span class="case-tag">Local SEO</span>
+            <span class="case-tag">Technical SEO</span>
+            <span class="case-tag">Visual Search SEO</span>
+            <span class="case-tag">GBP Optimisation</span>
+            <span class="case-tag">Content Strategy</span>
+          </div>
+          <div class="case-summary">Rebuilt the site's information architecture to separate service categories with location-targeted landing pages for Dubai and UAE. Optimised all portfolio images with descriptive ALT texts and implemented image schema. Managed Google Business Profile with consistent posting and review generation strategy.</div>
+          <a href="https://ritz-interiors.com/" target="_blank" class="case-link">View Website →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK SAMPLES -->
+<section class="work-section" id="samples">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-num">04 /</span>
+        <div class="label-line"></div>
+      </div>
+      <h2 class="section-title">Work Samples</h2>
+      <div class="red-divider"></div>
+      <p class="section-sub">Live documentation of actual SEO work — audits, research, reporting, and optimisation delivered for real clients.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-num">01</div>
+        <div class="work-title">Backlink Profile &amp; Link Building Log</div>
+        <div class="work-desc">Comprehensive backlink acquisition tracking sheet documenting link sources, domain authority, anchor text, and status for active client campaigns.</div>
+        <a href="https://docs.google.com/spreadsheets/d/14ZA6DDyy7d9H8pDuRCx9vH4FDJdLv-A1bfheTSX4A3g/edit?gid=1992365798#gid=1992365798" target="_blank" class="work-link">📊 Open Spreadsheet →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">02</div>
+        <div class="work-title">Backlink Research &amp; Analysis</div>
+        <div class="work-desc">In-depth backlink research file covering competitor link gap analysis, link quality assessment, and prospecting matrix.</div>
+        <a href="https://docs.google.com/spreadsheets/d/12nNgW9QiiVsPm5R0GFAG2MNLOIPHfNrDaG2pAtXzRtY/edit?gid=1768930673#gid=1768930673" target="_blank" class="work-link">📊 Open Spreadsheet →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">03</div>
+        <div class="work-title">SEO Performance Reporting</div>
+        <div class="work-desc">Weekly SEO report showcasing overall progress, traffic improvement, geo performance, keyword rankings, and link metrics.</div>
+        <a href="Weekly_SEO_Report_Ritz.pdf" target="_blank" class="work-link">📄 View Report →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">04</div>
+        <div class="work-title">Website Audit Report</div>
+        <div class="work-desc">Detailed website audit document identifying technical SEO issues, on-page gaps, and actionable recommendations.</div>
+        <a href="https://docs.google.com/document/d/1SgIQfpE5eRtRDKfsI5_LOGEyuVZXLJIx/edit" target="_blank" class="work-link">📝 View Audit →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">05</div>
+        <div class="work-title">On-Site Audit Report</div>
+        <div class="work-desc">Comprehensive on-site SEO audit spreadsheet covering page-level analysis, crawl data, content issues, and prioritised fix recommendations.</div>
+        <a href="https://docs.google.com/spreadsheets/d/1rhGmIWEVGyjQm3HhsxMKckDYf6fU_Esl3N7CCe1GNqU/edit?gid=1126333028#gid=1126333028" target="_blank" class="work-link">📊 View On-Site Audit →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">06</div>
+        <div class="work-title">Keyword Research Document</div>
+        <div class="work-desc">Keyword research report with target URLs, primary and secondary keywords, content suggestions, and keyword-to-page mapping strategy.</div>
+        <a href="https://docs.google.com/document/d/1jI8kQTuqg_rwtBw7QKBzHCgqnEJe5xvq8jViZ5l0QSw/edit?tab=t.0" target="_blank" class="work-link">📝 View Research →</a>
+      </div>
+      <div class="work-card">
+        <div class="work-num">07</div>
+        <div class="work-title">Meta Tags Optimisation</div>
+        <div class="work-desc">Meta title and description optimisation document covering existing pages and new page suggestions with targeted keywords.</div>
+        <a href="https://docs.google.com/document/d/15JoN-Qm8Pg5GJKFa7RT6b0ma_aMkPWri03gGBgUuHYk/edit?tab=t.0" target="_blank" class="work-link">📝 View Meta Tags →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">
+        <span class="label-num">05 /</span>
+        <div class="label-line"></div>
+      </div>
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="red-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">
+          I'm actively looking for full-time SEO / Digital Marketing roles where I can contribute immediately and grow with a strong team. Based in Jaipur, India — open to remote positions across India and internationally.
+        </p>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <span>Email</span>
+            <a href="mailto:shivajijadon@gmail.com">shivajijadon@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <span>WhatsApp / Phone</span>
+            <a href="tel:+919074983148">+91 9074983148</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <span>Location</span>
+            <p>Jaipur, Rajasthan, India</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div class="contact-detail">
+            <span>Availability</span>
+            <p>Immediately Available &nbsp;·&nbsp; Remote Only</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-wrapper">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="senderName" placeholder="Rahul Sharma">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="senderEmail" placeholder="hr@company.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company / Organisation</label>
+            <input type="text" id="senderCompany" placeholder="Your Company Name">
+          </div>
+          <div class="form-group">
+            <label>Role / Opportunity</label>
+            <select id="senderRole">
+              <option>SEO Executive / Specialist</option>
+              <option>Digital Marketing Executive</option>
+              <option>SEO Manager</option>
+              <option>Content & SEO Strategist</option>
+              <option>Other / Full-Time Role</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="senderMessage" placeholder="Tell me about the role or opportunity..."></textarea>
+          </div>
+          <!-- FIX #4: Button now sends via WhatsApp -->
+          <button class="submit-btn" onclick="sendViaWhatsApp()">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Shivaji Rajpal</span> &nbsp;·&nbsp; SEO & Digital Marketing Specialist &nbsp;·&nbsp; Jaipur, India</p>
+</footer>
+
+<script>
+/* FIX #4: WhatsApp message sender */
+function sendViaWhatsApp() {
+  var name = document.getElementById('senderName').value.trim();
+  var email = document.getElementById('senderEmail').value.trim();
+  var company = document.getElementById('senderCompany').value.trim();
+  var role = document.getElementById('senderRole').value;
+  var message = document.getElementById('senderMessage').value.trim();
+
+  if (!name || !message) {
+    alert('Please enter your name and message.');
+    return;
+  }
+
+  var text = 'Hi Shivaji! I found your portfolio and want to connect.\n\n'
+    + '*Name:* ' + name + '\n'
+    + (email ? '*Email:* ' + email + '\n' : '')
+    + (company ? '*Company:* ' + company + '\n' : '')
+    + '*Role/Opportunity:* ' + role + '\n'
+    + '\n*Message:*\n' + message;
+
+  window.open('https://wa.me/919074983148?text=' + encodeURIComponent(text), '_blank');
+}
+</script>
+
+</body>
+</html>
